@@ -1,0 +1,1758 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HF Studios | Premium Websites for Local Businesses</title>
+    <meta
+      name="description"
+      content="HF Studios designs and builds professional websites for local businesses that want to stand out, build trust and turn online visitors into real enquiries."
+    />
+    <style>
+      :root {
+        --bg: #f5f3ef;
+        --panel: #ffffff;
+        --panel-alt: #f0efe9;
+        --ink: #171b22;
+        --muted: #5d6470;
+        --line: rgba(23, 27, 34, 0.12);
+        --brand: #101820;
+        --brand-soft: #1f2a36;
+        --accent: #b38d5d;
+        --accent-soft: rgba(179, 141, 93, 0.12);
+        --success: #d9e3de;
+        --shadow: 0 20px 45px rgba(16, 24, 32, 0.08);
+        --shadow-soft: 0 14px 32px rgba(16, 24, 32, 0.05);
+        --radius: 22px;
+        --radius-sm: 14px;
+        --container: 1200px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: Inter, "Segoe UI", Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button,
+      input,
+      textarea,
+      select {
+        font: inherit;
+      }
+
+      .container {
+        width: min(var(--container), calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 14px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.7);
+        color: var(--muted);
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 0 6px rgba(179, 141, 93, 0.15);
+      }
+
+      .section {
+        padding: 110px 0;
+      }
+
+      .section-header {
+        margin-bottom: 48px;
+      }
+
+      .section-header h2 {
+        margin: 18px 0 12px;
+        font-size: clamp(2.2rem, 3vw, 3.5rem);
+        line-height: 1.1;
+        letter-spacing: -0.06em;
+      }
+
+      .section-header p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.08rem;
+        max-width: 700px;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: blur(18px);
+        background: rgba(245, 243, 239, 0.72);
+        border-bottom: 1px solid rgba(23, 27, 34, 0.04);
+      }
+
+      .nav-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 78px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+      }
+
+      .brand-mark {
+        width: 34px;
+        height: 34px;
+        display: grid;
+        place-items: center;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #171b22, #2c3947);
+        color: #fff;
+        font-size: 0.8rem;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+      }
+
+      .main-nav {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        color: var(--muted);
+        font-size: 0.96rem;
+      }
+
+      .main-nav a {
+        position: relative;
+        transition: color 0.25s ease;
+      }
+
+      .main-nav a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 100%;
+        height: 1.5px;
+        background: var(--ink);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.25s ease;
+      }
+
+      .main-nav a:hover {
+        color: var(--ink);
+      }
+
+      .main-nav a:hover::after {
+        transform: scaleX(1);
+      }
+
+      .nav-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.9rem 1.3rem;
+        border: 1px solid var(--ink);
+        border-radius: 999px;
+        background: var(--ink);
+        color: #fff;
+        font-weight: 600;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .nav-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 25px rgba(23, 27, 34, 0.12);
+      }
+
+      .mobile-toggle {
+        display: none;
+      }
+
+      .hero {
+        padding: 70px 0 60px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 56px;
+        align-items: center;
+      }
+
+      .hero-copy h1 {
+        margin: 18px 0 22px;
+        font-size: clamp(3rem, 5vw, 5.2rem);
+        line-height: 0.96;
+        letter-spacing: -0.08em;
+        max-width: 620px;
+      }
+
+      .hero-copy p {
+        max-width: 620px;
+        font-size: 1.15rem;
+        color: var(--muted);
+        margin: 0 0 30px;
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 26px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 1.08rem 1.5rem;
+        border-radius: 999px;
+        font-weight: 700;
+        transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+        cursor: pointer;
+        border: 1px solid transparent;
+      }
+
+      .btn-primary {
+        background: var(--ink);
+        color: #fff;
+        box-shadow: 0 8px 24px rgba(23, 27, 34, 0.14);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 18px 30px rgba(23, 27, 34, 0.18);
+      }
+
+      .btn-secondary {
+        border-color: rgba(23, 27, 34, 0.1);
+        background: rgba(255,255,255,0.4);
+        color: var(--ink);
+      }
+
+      .btn-secondary:hover {
+        transform: translateY(-2px);
+        border-color: rgba(23, 27, 34, 0.18);
+      }
+
+      .trust-indicator {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--muted);
+        font-size: 0.92rem;
+        flex-wrap: wrap;
+      }
+
+      .trust-indicator span {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0;
+      }
+
+      .trust-indicator span::before {
+        content: "•";
+        color: var(--accent);
+        font-size: 1.2rem;
+      }
+
+      .mockup-shell {
+        position: relative;
+        padding: 22px 18px 18px;
+        border: 1px solid rgba(23, 27, 34, 0.08);
+        border-radius: 30px;
+        background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.65));
+        box-shadow: var(--shadow);
+        animation: mockup-float 6s ease-in-out infinite;
+      }
+
+      @keyframes mockup-float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+      }
+
+      .browser-bar {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 16px 20px;
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #d7d4ce;
+      }
+
+      .dot:nth-child(1) { background: #d7c7b2; }
+      .dot:nth-child(2) { background: #d8d8d6; }
+      .dot:nth-child(3) { background: #d3d7db; }
+
+      .browser-address {
+        margin-left: auto;
+        width: 55%;
+        height: 32px;
+        border-radius: 999px;
+        background: rgba(16, 24, 32, 0.04);
+        border: 1px solid rgba(23, 27, 34, 0.04);
+      }
+
+      .dashboard {
+        display: grid;
+        grid-template-columns: 1fr 0.7fr;
+        gap: 18px;
+        padding: 0 8px 8px;
+      }
+
+      .main-screen {
+        background: #ffffff;
+        border: 1px solid rgba(23,27,34,0.08);
+        border-radius: 22px;
+        overflow: hidden;
+      }
+
+      .main-screen .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 22px;
+        border-bottom: 1px solid rgba(23,27,34,0.08);
+      }
+
+      .brand-mini {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.75rem;
+        font-weight: 800;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+      }
+
+      .brand-mini-mark {
+        width: 18px;
+        height: 18px;
+        border-radius: 6px;
+        background: linear-gradient(135deg, #171b22, #304558);
+      }
+
+      .nav-mini {
+        display: flex;
+        gap: 16px;
+        color: var(--muted);
+        font-size: 0.8rem;
+      }
+
+      .nav-mini span {
+        padding: 8px 10px;
+        border-radius: 999px;
+      }
+
+      .nav-mini span:nth-child(2) {
+        background: rgba(179, 141, 93, 0.12);
+        color: var(--ink);
+      }
+
+      .hero-panel {
+        padding: 26px 22px 18px;
+      }
+
+      .hero-panel h3 {
+        margin: 0 0 8px;
+        font-size: clamp(1.7rem, 2vw, 2.5rem);
+        letter-spacing: -0.06em;
+      }
+
+      .hero-panel p {
+        margin: 0 0 22px;
+        color: var(--muted);
+      }
+
+      .score-strip {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+
+      .score-box {
+        flex: 1;
+        background: linear-gradient(180deg, #f7f4ef, #fbfaf8);
+        border: 1px solid rgba(23, 27, 34, 0.06);
+        border-radius: 14px;
+        padding: 14px 12px;
+      }
+
+      .score-box strong {
+        display: block;
+        font-size: 1.2rem;
+        letter-spacing: -0.05em;
+      }
+
+      .score-box span {
+        display: block;
+        color: var(--muted);
+        font-size: 0.78rem;
+      }
+
+      .metric-card {
+        background: linear-gradient(180deg, #f7f4ef, #f1efe8);
+        border: 1px solid rgba(23,27,34,0.08);
+        border-radius: 16px;
+        padding: 16px;
+      }
+
+      .metric-card .label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--muted);
+        font-size: 0.8rem;
+        margin-bottom: 12px;
+      }
+
+      .metric-chart {
+        height: 78px;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        align-items: end;
+        gap: 8px;
+      }
+
+      .metric-chart span {
+        display: block;
+        border-radius: 999px 999px 0 0;
+        background: linear-gradient(180deg, #b38d5d, #d7c59d);
+        opacity: 0.9;
+      }
+
+      .metric-chart span:nth-child(1) { height: 42%; }
+      .metric-chart span:nth-child(2) { height: 54%; }
+      .metric-chart span:nth-child(3) { height: 56%; }
+      .metric-chart span:nth-child(4) { height: 68%; }
+      .metric-chart span:nth-child(5) { height: 76%; }
+      .metric-chart span:nth-child(6) { height: 82%; }
+      .metric-chart span:nth-child(7) { height: 95%; }
+
+      .aside-panel {
+        display: grid;
+        gap: 18px;
+      }
+
+      .mini-card {
+        background: #fff;
+        border: 1px solid rgba(23,27,34,0.08);
+        border-radius: 18px;
+        padding: 18px;
+        box-shadow: var(--shadow-soft);
+      }
+
+      .mini-badge {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        border-radius: 12px;
+        background: rgba(179,141,93,0.12);
+        color: var(--ink);
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+
+      .mini-card h4 {
+        margin: 0 0 10px;
+        font-size: 1.05rem;
+      }
+
+      .mini-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+
+      .stats {
+        background: #121a22;
+        color: #eef1f2;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 32px;
+        align-items: stretch;
+      }
+
+      .stat-box {
+        position: relative;
+        padding: 36px 30px 28px;
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 24px;
+        background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.005));
+        min-height: 260px;
+      }
+
+      .stat-box .big {
+        display: block;
+        font-size: clamp(3rem, 5vw, 5rem);
+        line-height: 1;
+        letter-spacing: -0.08em;
+        margin-bottom: 18px;
+        color: #f9f5ee;
+      }
+
+      .stat-box p {
+        margin: 0;
+        font-size: 1.15rem;
+        color: rgba(238, 241, 242, 0.85);
+      }
+
+      .stat-box .source {
+        display: block;
+        margin-top: 18px;
+        font-size: 0.74rem;
+        color: rgba(238, 241, 242, 0.6);
+        letter-spacing: 0.02em;
+      }
+
+      .stats-note {
+        margin-top: 26px;
+        color: rgba(238, 241, 242, 0.7);
+        font-size: 0.82rem;
+        font-style: italic;
+      }
+
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .feature-card {
+        position: relative;
+        background: rgba(255,255,255,0.72);
+        border: 1px solid rgba(23,27,34,0.07);
+        border-radius: var(--radius);
+        padding: 28px 24px 22px;
+        box-shadow: var(--shadow-soft);
+        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 30px rgba(16,24,32,0.08);
+        border-color: rgba(23,27,34,0.12);
+      }
+
+      .feature-icon {
+        width: 52px;
+        height: 52px;
+        display: grid;
+        place-items: center;
+        border-radius: 15px;
+        background: var(--accent-soft);
+        color: var(--ink);
+        margin-bottom: 16px;
+        font-size: 1.3rem;
+      }
+
+      .feature-card h3 {
+        margin: 0 0 12px;
+        font-size: 1.35rem;
+        letter-spacing: -0.04em;
+      }
+
+      .feature-card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .journey-wrapper {
+        position: relative;
+        display: grid;
+        gap: 18px;
+      }
+
+      .journey-line {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        height: 1px;
+        background: linear-gradient(90deg, rgba(23,27,34,0.05), rgba(23,27,34,0.15), rgba(23,27,34,0.05));
+      }
+
+      .journey-items {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 20px;
+        align-items: center;
+      }
+
+      .journey-step {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .journey-bubble {
+        width: 68px;
+        height: 68px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: #fff;
+        border: 1px solid rgba(23,27,34,0.08);
+        box-shadow: var(--shadow-soft);
+        font-weight: 700;
+        margin-bottom: 16px;
+        animation: bubble-bob 3.2s ease-in-out infinite;
+      }
+
+      .journey-step:nth-child(even) .journey-bubble { animation-delay: -1.6s; }
+
+      @keyframes bubble-bob {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-7px); }
+      }
+
+      .journey-step strong {
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      .journey-arrow {
+        display: grid;
+        place-items: center;
+        color: var(--muted);
+        font-size: 1.5rem;
+      }
+
+      .journey-intro {
+        margin-top: 38px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 22px;
+        justify-content: space-between;
+        align-items: end;
+      }
+
+      .journey-intro h3 {
+        margin: 0;
+        font-size: clamp(2rem, 3vw, 3rem);
+        letter-spacing: -0.06em;
+      }
+
+      .journey-intro p {
+        margin: 0;
+        max-width: 720px;
+        color: var(--muted);
+        font-size: 1.05rem;
+      }
+
+      .testimonials-wrap {
+        display: flex;
+        gap: 22px;
+        overflow: hidden;
+        touch-action: pan-y;
+      }
+
+      .testimonial-card {
+        flex: 0 0 100%;
+        min-width: 0;
+        background: rgba(255,255,255,0.72);
+        border: 1px solid rgba(23,27,34,0.07);
+        border-radius: 24px;
+        padding: 26px 24px 20px;
+        box-shadow: var(--shadow-soft);
+        transition: transform 0.65s cubic-bezier(.2,.75,.25,1), opacity 0.65s ease;
+      }
+
+      .stars {
+        font-size: 1rem;
+        color: #c88d08;
+        letter-spacing: 0.15em;
+        margin-bottom: 16px;
+      }
+
+      .testimonial-card blockquote {
+        margin: 0 0 18px;
+        font-size: 1.08rem;
+        line-height: 1.7;
+        color: var(--ink);
+      }
+
+      .testimonial-card footer {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .testimonial-cta {
+        margin-top: 42px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: end;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .testimonial-cta h3 {
+        margin: 0 0 8px;
+        font-size: clamp(2rem, 3vw, 3rem);
+        letter-spacing: -0.06em;
+      }
+
+      .testimonial-cta p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.1rem;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .service-card {
+        padding: 28px 24px 22px;
+        background: rgba(255,255,255,0.72);
+        border: 1px solid rgba(23,27,34,0.07);
+        border-radius: 22px;
+        box-shadow: var(--shadow-soft);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .service-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 34px rgba(16,24,32,0.08);
+      }
+
+      .service-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 18px;
+      }
+
+      .service-number {
+        font-size: 0.8rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .service-card h3 {
+        margin: 0 0 12px;
+        font-size: 1.42rem;
+        letter-spacing: -0.05em;
+      }
+
+      .service-card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .service-icon {
+        width: 44px;
+        height: 44px;
+        display: grid;
+        place-items: center;
+        border-radius: 12px;
+        background: var(--accent-soft);
+        color: var(--ink);
+        font-weight: 700;
+      }
+
+      .process-steps {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .process-step {
+        position: relative;
+        padding: 26px 22px 22px;
+        background: rgba(255,255,255,0.72);
+        border: 1px solid rgba(23,27,34,0.07);
+        border-radius: 22px;
+        box-shadow: var(--shadow-soft);
+      }
+
+      .process-step:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: -16px;
+        width: 32px;
+        height: 1px;
+        background: rgba(23,27,34,0.12);
+      }
+
+      .step-number {
+        display: inline-flex;
+        width: 52px;
+        height: 52px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 14px;
+        background: rgba(179,141,93,0.12);
+        font-weight: 800;
+        margin-bottom: 16px;
+      }
+
+      .process-step h3 {
+        margin: 0 0 12px;
+        font-size: 1.35rem;
+        letter-spacing: -0.04em;
+      }
+
+      .process-step p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .industry-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .industry-card {
+        padding: 22px 20px;
+        border-radius: 18px;
+        border: 1px solid rgba(23,27,34,0.08);
+        background: rgba(255,255,255,0.8);
+        box-shadow: var(--shadow-soft);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .industry-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 18px 30px rgba(16,24,32,0.08);
+      }
+
+      .industry-card h4 {
+        margin: 0;
+        font-size: 1.08rem;
+      }
+
+      .cta-panel {
+        background: linear-gradient(135deg, #141d26, #1d2b35);
+        color: #f5f6f5;
+        border-radius: 30px;
+        padding: clamp(32px, 5vw, 56px);
+        box-shadow: var(--shadow);
+      }
+
+      .cta-panel h2 {
+        margin: 0 0 14px;
+        font-size: clamp(2.4rem, 4vw, 4rem);
+        letter-spacing: -0.08em;
+        line-height: 1;
+      }
+
+      .cta-panel p {
+        margin: 0 0 28px;
+        color: rgba(245,246,245,0.76);
+        font-size: 1.08rem;
+        max-width: 760px;
+      }
+
+      .cta-panel .cta-row {
+        margin-bottom: 0;
+      }
+
+      .cta-panel .btn-primary {
+        background: #fff;
+        color: var(--ink);
+      }
+
+      .cta-panel .btn-secondary {
+        border-color: rgba(255,255,255,0.15);
+        background: rgba(255,255,255,0.03);
+        color: #fff;
+      }
+
+      .secondary-text {
+        margin-top: 18px;
+        color: rgba(255,255,255,0.72);
+        font-size: 0.94rem;
+      }
+
+      .faq-wrap {
+        display: grid;
+        gap: 18px;
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      details {
+        background: rgba(255,255,255,0.72);
+        border: 1px solid rgba(23,27,34,0.08);
+        border-radius: 20px;
+        padding: 22px 24px;
+        box-shadow: var(--shadow-soft);
+      }
+
+      summary {
+        list-style: none;
+        cursor: pointer;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        font-size: 1.08rem;
+        position: relative;
+        padding-right: 34px;
+      }
+
+      summary::-webkit-details-marker {
+        display: none;
+      }
+
+      summary::after {
+        content: "+";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.5rem;
+        color: var(--muted);
+      }
+
+      details[open] summary::after {
+        content: "–";
+      }
+
+      details p {
+        margin: 16px 0 0;
+        color: var(--muted);
+      }
+
+      .final-cta {
+        background: #f1ede5;
+      }
+
+      .final-cta-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 28px;
+        padding: 34px 28px;
+        border: 1px solid rgba(23,27,34,0.08);
+        border-radius: 26px;
+        background: rgba(255,255,255,0.5);
+      }
+
+      .final-cta-copy h2 {
+        margin: 0 0 12px;
+        font-size: clamp(2.4rem, 3vw, 3.4rem);
+        letter-spacing: -0.08em;
+      }
+
+      .final-cta-copy p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.08rem;
+      }
+
+      .final-cta-actions {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .site-footer {
+        background: #101820;
+        color: rgba(245,246,245,0.82);
+        padding: 68px 0 28px;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr;
+        gap: 28px;
+        padding-bottom: 34px;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+      }
+
+      .footer-brand h3 {
+        margin: 0 0 8px;
+        font-size: 1.4rem;
+        letter-spacing: -0.04em;
+      }
+
+      .footer-brand p,
+      .footer-col p,
+      .footer-col a,
+      .footer-meta {
+        margin: 0;
+        color: rgba(245,246,245,0.72);
+      }
+
+      .footer-col h4 {
+        margin: 0 0 14px;
+        font-size: 0.8rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(245,246,245,0.5);
+      }
+
+      .footer-col ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 10px;
+      }
+
+      .footer-meta {
+        padding-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+        font-size: 0.9rem;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+          scroll-behavior: auto !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .hero-grid,
+        .dashboard,
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .cards-grid,
+        .services-grid,
+        .process-steps,
+        .industry-grid,
+        .testimonials-wrap {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .journey-items {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .journey-line {
+          display: none;
+        }
+
+        .journey-arrow {
+          display: none;
+        }
+
+        .final-cta-inner {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .main-nav {
+          position: absolute;
+          top: 100%;
+          left: 16px;
+          right: 16px;
+          display: none;
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 20px 18px;
+          background: rgba(255,255,255,0.9);
+          border: 1px solid rgba(23,27,34,0.08);
+          border-radius: 18px;
+          box-shadow: var(--shadow-soft);
+        }
+
+        .main-nav.open {
+          display: flex;
+        }
+
+        .mobile-toggle {
+          display: inline-flex;
+          width: 42px;
+          height: 42px;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid rgba(23,27,34,0.08);
+          background: rgba(255,255,255,0.6);
+          border-radius: 12px;
+          cursor: pointer;
+          font-size: 1.4rem;
+        }
+
+        .nav-wrap {
+          position: relative;
+        }
+
+        .nav-cta {
+          display: none;
+        }
+
+        .cards-grid,
+        .services-grid,
+        .process-steps,
+        .industry-grid,
+        .testimonials-wrap,
+        .stats-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          padding-top: 32px;
+        }
+
+        .hero-copy h1 {
+          max-width: 100%;
+        }
+
+        .cta-row {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .btn {
+          width: 100%;
+        }
+
+        .journey-items {
+          grid-template-columns: 1fr;
+        }
+
+        .journey-step {
+          align-items: flex-start;
+          text-align: left;
+          flex-direction: row;
+          gap: 16px;
+        }
+
+        .journey-bubble {
+          margin-bottom: 0;
+          width: 54px;
+          height: 54px;
+        }
+
+        .journey-intro {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="#top" class="brand" aria-label="HF Studios home">
+          <span class="brand-mark">HF</span>
+          <span>HF Studios</span>
+        </a>
+
+        <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+          <a href="#top">Home</a>
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#about">About</a>
+          <a href="book.html">Book a Call</a>
+          <a href="help.html">Help</a>
+        </nav>
+
+        <a href="book.html" class="nav-cta">Book a Call</a>
+        <button class="mobile-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <span class="eyebrow">UK web design studio</span>
+            <h1>Websites that make local businesses look impossible to ignore.</h1>
+            <p>
+              HF Studios designs and builds professional websites for businesses that want to stand out, build trust and turn online visitors into real enquiries.
+            </p>
+            <div class="cta-row">
+              <a href="book.html" class="btn btn-primary">Book a Call</a>
+              <a href="#services" class="btn btn-secondary">See What We Do</a>
+            </div>
+            <div class="trust-indicator" aria-label="Trust indicators">
+              <span>Designed for local businesses</span>
+              <span>Built around your goals</span>
+              <span>Fully responsive</span>
+            </div>
+          </div>
+
+          <div class="mockup-shell reveal">
+            <div class="browser-bar">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <div class="browser-address"></div>
+            </div>
+
+            <div class="dashboard">
+              <div class="main-screen">
+                <div class="topbar">
+                  <div class="brand-mini">
+                    <span class="brand-mini-mark"></span>
+                    <span>HF</span>
+                  </div>
+                  <div class="nav-mini">
+                    <span>Services</span>
+                    <span>Book</span>
+                    <span>About</span>
+                  </div>
+                </div>
+
+                <div class="hero-panel">
+                  <h3>Make a stronger first impression.</h3>
+                  <p>Professional websites built to help local businesses look credible, feel consistent and convert more interest.</p>
+
+                  <div class="score-strip">
+                    <div class="score-box">
+                      <strong>4.9/5</strong>
+                      <span>Client confidence</span>
+                    </div>
+                    <div class="score-box">
+                      <strong>24/7</strong>
+                      <span>Visible online</span>
+                    </div>
+                  </div>
+
+                  <div class="metric-card">
+                    <div class="label">
+                      <span>Engagement</span>
+                      <strong>+38%</strong>
+                    </div>
+                    <div class="metric-chart" aria-label="engagement chart">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="aside-panel">
+                <div class="mini-card">
+                  <div class="mini-badge">★</div>
+                  <h4>Trust-first design</h4>
+                  <p>Clean, credible branding that helps customers feel confident before they get in touch.</p>
+                </div>
+                <div class="mini-card">
+                  <div class="mini-badge">↗</div>
+                  <h4>Built to convert</h4>
+                  <p>Clear calls to action, contact details and messaging that supports enquiries.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats section" aria-labelledby="stats-heading">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="eyebrow" style="background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.08); color: rgba(255,255,255,0.82);">Consumer research</span>
+            <h2 id="stats-heading" style="color: #f8f5f1;">Why your website matters more than ever.</h2>
+          </div>
+
+          <div class="stats-grid reveal">
+            <div class="stat-box">
+              <span class="big">54%</span>
+              <p>of consumers visit a business's website after reading positive reviews.</p>
+              <span class="source">Source: BrightLocal Local Consumer Review Survey.</span>
+            </div>
+            <div class="stat-box">
+              <span class="big">85%</span>
+              <p>of consumers consider contact information and opening hours important when researching local businesses.</p>
+              <span class="source">Source: BrightLocal consumer search research.</span>
+            </div>
+          </div>
+
+          <div class="stats-note reveal">
+            *Statistics are based on independent consumer research by BrightLocal and are provided for context.
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="eyebrow">Why a website matters</span>
+            <h2>Your website is more than a website.</h2>
+            <p>It's often the place customers go when they're deciding whether they can trust your business.</p>
+          </div>
+
+          <div class="cards-grid reveal">
+            <article class="feature-card">
+              <div class="feature-icon">✓</div>
+              <h3>Build Trust</h3>
+              <p>Give potential customers a professional first impression and show them exactly who they're dealing with.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">⌕</div>
+              <h3>Get Discovered</h3>
+              <p>Give customers somewhere to go when they search for your business or the services you provide.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">✉</div>
+              <h3>Generate Enquiries</h3>
+              <p>Make it simple for interested customers to call, message, request a quote or book.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">◌</div>
+              <h3>Work 24/7</h3>
+              <p>Your website can showcase your business and answer customer questions around the clock.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="eyebrow">Customer journey</span>
+          </div>
+
+          <div class="journey-wrapper reveal">
+            <div class="journey-line"></div>
+            <div class="journey-items">
+              <div class="journey-step">
+                <div class="journey-bubble">01</div>
+                <strong>Customer discovers you</strong>
+              </div>
+              <div class="journey-arrow">↓</div>
+              <div class="journey-step">
+                <div class="journey-bubble">02</div>
+                <strong>Checks your reviews</strong>
+              </div>
+              <div class="journey-arrow">↓</div>
+              <div class="journey-step">
+                <div class="journey-bubble">03</div>
+                <strong>Visits your website</strong>
+              </div>
+              <div class="journey-arrow">↓</div>
+              <div class="journey-step">
+                <div class="journey-bubble">04</div>
+                <strong>Builds confidence</strong>
+              </div>
+              <div class="journey-arrow">↓</div>
+              <div class="journey-step">
+                <div class="journey-bubble">05</div>
+                <strong>Gets in touch</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="journey-intro reveal">
+            <h3>Turn interest into action.</h3>
+            <p>Someone might discover your business through Google, social media, a recommendation or a review. Your website is where you get the opportunity to turn that interest into an actual enquiry.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="reviews">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="eyebrow">Testimonials</span>
+            <h2>Placeholder client feedback for future review swaps.</h2>
+            <p>These are example testimonials to help structure the section until genuine customer reviews are available.</p>
+          </div>
+
+          <div class="testimonials-wrap reveal">
+            <article class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <blockquote>
+                "HF Studios completely transformed how our business looks online. The new website feels professional, modern and actually represents the quality of our work."
+              </blockquote>
+              <footer>— James, Local Business Owner</footer>
+            </article>
+
+            <article class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <blockquote>
+                "The whole process was straightforward. They listened to what we wanted and turned it into something much better than we imagined."
+              </blockquote>
+              <footer>— Sarah, Business Owner</footer>
+            </article>
+
+            <article class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <blockquote>
+                "We finally have a website we're proud to send customers to."
+              </blockquote>
+              <footer>— Daniel, Local Business Owner</footer>
+            </article>
+          </div>
+
+          <div class="testimonial-cta reveal">
+            <div>
+              <h3>Want results like these?</h3>
+              <p>Let's talk about your website.</p>
+            </div>
+            <a href="book.html" class="btn btn-primary">Book a Call</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="services">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="eyebrow">Services</span>
+            <h2>Everything you need to build a stronger online presence.</h2>
+          </div>
+
+          <div class="services-grid reveal">
+            <article class="service-card">
+              <div class="service-top">
+                <span class="service-number">01</span>
+                <span class="service-icon">D</span>
+              </div>
+              <h3>Custom Website Design</h3>
+              <p>Professional websites designed specifically around the business so your online presence reflects the quality of what you offer.</p>
+            </article>
+
+            <article class="service-card">
+              <div class="service-top">
+                <span class="service-number">02</span>
+                <span class="service-icon">W</span>
+              </div>
+              <h3>Website Development</h3>
+              <p>Fast, responsive and functional websites built for modern devices so customers can browse smoothly on desktop, tablet and mobile.</p>
+            </article>
+
+            <article class="service-card">
+              <div class="service-top">
+                <span class="service-number">03</span>
+                <span class="service-icon">M</span>
+              </div>
+              <h3>Website Maintenance</h3>
+              <p>Ongoing updates and support so the client doesn't have to worry about maintaining the website themselves.</p>
+            </article>
+
+            <article class="service-card">
+              <div class="service-top">
+                <span class="service-number">04</span>
+                <span class="service-icon">H</span>
+              </div>
+              <h3>Hosting</h3>
+              <p>Reliable hosting and technical management so the site stays online, secure and running smoothly.</p>
+            </article>
+
+            <article class="service-card">
+              <div class="service-top">
+                <span class="service-number">05</span>
+                <span class="service-icon">S</span>
+              </div>
+              <h3>SEO Foundations</h3>
+              <p>Websites structured with search engines and discoverability in mind, helping customers find the right information when they search locally.</p>
+            </article>
+
+            <article class="service-card">
+              <div class="service-top">
+                <span class="service-number">06</span>
+                <span class="service-icon">O</span>
+              </div>
+              <h3>Ongoing Support</h3>
+              <p>Optional monthly support for updates, improvements and changes, so the website keeps working as the business grows.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="process">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="eyebrow">Process</span>
+            <h2>A clear path from idea to launch.</h2>
+          </div>
+
+          <div class="process-steps reveal">
+            <article class="process-step">
+              <div class="step-number">01</div>
+              <h3>Discover</h3>
+              <p>We learn about your business, customers and goals.</p>
+            </article>
+
+            <article class="process-step">
+              <div class="step-number">02</div>
+              <h3>Plan</h3>
+              <p>We work out the pages, features, structure and visual direction.</p>
+            </article>
+
+            <article class="process-step">
+              <div class="step-number">03</div>
+              <h3>Build</h3>
+              <p>We design and develop your website around everything we've discussed.</p>
+            </article>
+
+            <article class="process-step">
+              <div class="step-number">04</div>
+              <h3>Launch</h3>
+              <p>Once everything is approved, we launch your new website and can continue looking after it.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="eyebrow">Built around your business</span>
+            <h2>No two businesses are the same. Your website shouldn't be either.</h2>
+            <p>We don't believe in throwing every business into the same template. We take the time to understand what makes your business different and build the website around that.</p>
+          </div>
+
+          <div class="industry-grid reveal">
+            <div class="industry-card"><h4>Trades</h4></div>
+            <div class="industry-card"><h4>Restaurants</h4></div>
+            <div class="industry-card"><h4>Professional services</h4></div>
+            <div class="industry-card"><h4>Fitness</h4></div>
+            <div class="industry-card"><h4>Beauty</h4></div>
+            <div class="industry-card"><h4>Automotive</h4></div>
+            <div class="industry-card"><h4>Local retail</h4></div>
+            <div class="industry-card"><h4>Creative businesses</h4></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="cta-panel reveal">
+            <h2>Let's build something that actually works for your business.</h2>
+            <p>
+              Every project is different. The cost depends on the size of the website, functionality, content and level of customisation required. We'll first understand what you need, then provide a clear proposal with no unnecessary extras.
+            </p>
+            <div class="cta-row">
+              <a href="book.html" class="btn btn-primary">Book a Call →</a>
+            </div>
+            <div class="secondary-text">No pressure. No obligation. Just a conversation.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="faq-heading">
+        <div class="container">
+          <div class="section-header reveal" style="text-align: center;">
+            <span class="eyebrow">FAQ</span>
+            <h2 id="faq-heading">Common questions from business owners.</h2>
+          </div>
+
+          <div class="faq-wrap reveal">
+            <details open>
+              <summary>Do I need a website if I already use Facebook or Instagram?</summary>
+              <p>Social media is useful, but it doesn't give you full control of the customer experience. A website gives your business a dedicated place to explain what you do, build trust, share reviews, and make it easy for people to get in touch.</p>
+            </details>
+
+            <details>
+              <summary>How much does a website cost?</summary>
+              <p>Every project is different. Pricing depends on the number of pages, functionality, design requirements and content. We'll provide a clear quote after understanding what you need.</p>
+            </details>
+
+            <details>
+              <summary>How long does a website take?</summary>
+              <p>Project timelines depend on the size and complexity of the website and how quickly content and feedback are provided.</p>
+            </details>
+
+            <details>
+              <summary>Can you look after my website after it's launched?</summary>
+              <p>Yes. HF Studios can provide optional ongoing hosting, maintenance and small website updates.</p>
+            </details>
+
+            <details>
+              <summary>Can you help with the content?</summary>
+              <p>Yes. Depending on the project, we can help organise, improve or create website content.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section final-cta" id="contact">
+        <div class="container">
+          <div class="final-cta-inner reveal">
+            <div class="final-cta-copy">
+              <h2>Your next customer is already searching.</h2>
+              <p>Make sure what they find gives them a reason to choose you.</p>
+            </div>
+            <div class="final-cta-actions">
+              <a href="book.html" class="btn btn-primary">Book a Call</a>
+              <a href="mailto:HFWebStudios@outlook.com" class="btn btn-secondary">Email Us</a>
+            </div>
+            <div class="secondary-text">Available to talk after 5pm most nights.</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <h3>HF Studios</h3>
+            <p>Professional websites for ambitious local businesses.</p>
+          </div>
+
+          <div class="footer-col">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="#top">Home</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#process">Process</a></li>
+              <li><a href="#reviews">Reviews</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="book.html">Book a Call</a></li>
+              <li><a href="help.html">Help</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <ul>
+              <li><a href="tel:+4472902838606">07290 2838606</a></li>
+              <li><a href="mailto:HFWebStudios@outlook.com">HFWebStudios@outlook.com</a></li>
+              <li><a href="https://www.instagram.com" target="_blank" rel="noreferrer">Instagram</a></li>
+              <li><a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a></li>
+              <li><a href="https://www.facebook.com" target="_blank" rel="noreferrer">Facebook</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms &amp; Conditions</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-meta">
+          <span>© 2025 HF Studios. All rights reserved.</span>
+          <span>Designed for local businesses.</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const navToggle = document.getElementById('navToggle');
+      const mainNav = document.getElementById('mainNav');
+
+      navToggle?.addEventListener('click', () => {
+        mainNav.classList.toggle('open');
+      });
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+
+      document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+      const reviews = document.querySelector('.testimonials-wrap');
+      if (reviews && reviews.children.length > 1) {
+        let reviewTimer;
+        const rotateReviews = () => {
+          reviews.style.transition = 'transform 0.65s cubic-bezier(.2,.75,.25,1)';
+          reviews.style.transform = 'translateX(calc(-100% - 22px))';
+          reviews.addEventListener('transitionend', () => {
+            reviews.append(reviews.firstElementChild);
+            reviews.style.transition = 'none';
+            reviews.style.transform = 'translateX(0)';
+          }, { once: true });
+        };
+        const startReviews = () => {
+          if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            reviewTimer = window.setInterval(rotateReviews, 4500);
+          }
+        };
+        const stopReviews = () => window.clearInterval(reviewTimer);
+        reviews.addEventListener('mouseenter', stopReviews);
+        reviews.addEventListener('mouseleave', startReviews);
+        reviews.addEventListener('focusin', stopReviews);
+        reviews.addEventListener('focusout', startReviews);
+        startReviews();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Help | HF Studios</title>
+  <meta name="description" content="Helpful information and support links for HF Studios." />
+  <style>
+    :root {
+      --bg: #f5f3ef;
+      --panel: #ffffff;
+      --ink: #171b22;
+      --muted: #5d6470;
+      --line: rgba(23, 27, 34, 0.12);
+      --accent: #b38d5d;
+      --shadow: 0 20px 45px rgba(16, 24, 32, 0.08);
+      --container: 980px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, "Segoe UI", Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(var(--container), calc(100% - 32px)); margin: 0 auto; }
+    .header {
+      position: sticky; top: 0;
+      background: rgba(245,243,239,.9);
+      border-bottom: 1px solid rgba(23,27,34,.06);
+      backdrop-filter: blur(18px);
+    }
+    .nav {
+      min-height: 78px;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 12px;
+      font-size: .8rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+    }
+    .brand-mark {
+      width: 34px; height: 34px; display: grid; place-items: center; border-radius: 12px;
+      background: linear-gradient(135deg, #171b22, #2c3947); color: white;
+    }
+    .navlinks { display: flex; gap: 24px; color: var(--muted); }
+    .navlinks a:hover { color: var(--ink); }
+    .nav-cta {
+      padding: .85rem 1.2rem; border-radius: 999px; background: var(--ink); color: white; font-weight: 700;
+    }
+    main { padding: 80px 0 100px; }
+    .panel {
+      background: rgba(255,255,255,.8);
+      border: 1px solid rgba(23,27,34,.08);
+      border-radius: 28px; box-shadow: var(--shadow);
+      padding: clamp(24px, 5vw, 54px);
+    }
+    h1 { margin: 0 0 16px; font-size: clamp(2.6rem, 6vw, 4.2rem); letter-spacing: -.08em; }
+    p { color: var(--muted); margin: 0 0 18px; }
+    .links {
+      display: grid; gap: 12px; margin-top: 22px;
+    }
+    .links a {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: fit-content; min-width: 200px; padding: 0.9rem 1.2rem;
+      border-radius: 999px; border: 1px solid rgba(23,27,34,.08); background: white; font-weight: 700;
+    }
+    .links a.primary {
+      background: var(--ink); color: white;
+    }
+    .form-wrap {
+      margin-top: 30px; padding-top: 26px; border-top: 1px solid var(--line);
+    }
+    .field { display: grid; gap: 8px; margin-bottom: 18px; }
+    .field label { font-weight: 700; }
+    .field input, .field textarea {
+      width: 100%; padding: 13px 14px; border: 1px solid rgba(23,27,34,.15); border-radius: 12px;
+      background: white; color: var(--ink); font: inherit;
+    }
+    .field input:focus, .field textarea:focus {
+      outline: 3px solid rgba(179,141,93,.2); border-color: var(--accent);
+    }
+    .field textarea { min-height: 160px; resize: vertical; }
+    .submit {
+      width: 100%; padding: 1rem 1.4rem; border: 0; border-radius: 999px; background: var(--ink);
+      color: white; font-weight: 700; cursor: pointer;
+    }
+    .submit:disabled { opacity: .7; cursor: not-allowed; }
+    .note { margin-top: 12px; color: var(--muted); font-size: .82rem; }
+    footer {
+      padding: 28px 0 40px; color: var(--muted); font-size: .92rem;
+    }
+    @media (max-width: 760px) {
+      .navlinks { display: none; }
+      .nav { justify-content: space-between; }
+      .nav-cta { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="HF Studios home"><span class="brand-mark">HF</span><span>HF Studios</span></a>
+      <nav class="navlinks" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="book.html">Book a Call</a>
+        <a href="help.html">Help</a>
+      </nav>
+      <a class="nav-cta" href="book.html">Book a Call</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="panel">
+        <h1>Help</h1>
+        <p>This page is here as a quick support and navigation stop while the site is being developed.</p>
+        <p>If you need to book a call, return to the booking page. If you want to revisit the main site, head back home.</p>
+
+        <div class="links">
+          <a class="primary" href="book.html">Book a call</a>
+          <a href="index.html">Back to home</a>
+          <a href="mailto:HFWebStudios@outlook.com">Email us</a>
+        </div>
+
+        <div class="form-wrap">
+          <h2>Report a problem?</h2>
+          <form id="problem-form">
+            <div class="field">
+              <label for="problem-name">Your name</label>
+              <input id="problem-name" name="Name" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="problem-email">Email address</label>
+              <input id="problem-email" name="Email" type="email" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label for="problem-details">What went wrong?</label>
+              <textarea id="problem-details" name="Problem" maxlength="1000" placeholder="Tell us what happened so we can help." required></textarea>
+            </div>
+            <button class="submit" type="submit">Send report</button>
+            <div class="note" id="problem-note">Your message is only used to help resolve the issue.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">© 2025 HF Studios · <a href="mailto:HFWebStudios@outlook.com">HFWebStudios@outlook.com</a></div>
+  </footer>
+
+  <script>
+    const HELP_LOCK_KEY = "hf_studios_help_report_sent";
+    const problemForm = document.getElementById("problem-form");
+    const problemButton = problemForm.querySelector('button[type="submit"]');
+    const problemNote = document.getElementById("problem-note");
+
+    function lockProblemForm(message) {
+      problemForm.querySelectorAll("input, textarea, button").forEach((field) => {
+        if (field !== problemButton) {
+          field.disabled = true;
+        }
+      });
+      problemButton.disabled = true;
+      problemButton.textContent = "Report sent";
+      problemNote.textContent = message;
+    }
+
+    if (localStorage.getItem(HELP_LOCK_KEY) === "true") {
+      lockProblemForm("Thanks — you've already sent one report from this browser. Please email HFWebStudios@outlook.com if you need further help.");
+    }
+
+    problemForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      if (!this.reportValidity()) return;
+      if (localStorage.getItem(HELP_LOCK_KEY) === "true") return;
+
+      const details = document.getElementById("problem-details").value.trim();
+      if (!details || details.length < 10) {
+        problemNote.textContent = "Please enter a few more details so we can understand the issue.";
+        document.getElementById("problem-details").focus();
+        return;
+      }
+
+      problemButton.disabled = true;
+      problemButton.textContent = "Sending…";
+
+      const data = new FormData(this);
+      data.set("_subject", "Website problem report");
+
+      fetch("https://formsubmit.co/ajax/HFWebStudios@outlook.com", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: data
+      })
+        .then((response) => {
+          if (!response.ok) throw new Error("Report could not be sent");
+          localStorage.setItem(HELP_LOCK_KEY, "true");
+          this.reset();
+          lockProblemForm("Thanks — your report has been sent. We will use it to help resolve the issue.");
+        })
+        .catch(() => {
+          problemButton.disabled = false;
+          problemButton.textContent = "Send report";
+          problemNote.textContent = "We couldn't send your report. Please try again or email HFWebStudios@outlook.com.";
+        });
+    });
+  </script>
+</body>
+</html>
